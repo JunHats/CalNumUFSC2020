@@ -1,13 +1,13 @@
 from math import e
 
 
-def newton_method(f, fl, D0, epsilon, max_iter=50):
+def newton_method(f, fl, D0, tau, max_iter=50):
     print("k\t\t D\t\t\t f(D)")
     k = 1
     while k <= max_iter:
         D = D0 - f(D0)/fl(D0)
         print(f'{k}\t{D}\t{f(D)}')
-        if abs(D-D0) <= epsilon:
+        if abs(D-D0) <= tau:
             return (D, k)
         D0 = D
         k = k+1
