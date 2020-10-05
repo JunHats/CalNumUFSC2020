@@ -11,7 +11,6 @@ def newton_method(f, fl, D0, epsilon, max_inter=50):
             return (D, k)
         D0 = D
         k = k+1
-    print("ERRO: num max de iteracoes atingido")
     return D
 
 
