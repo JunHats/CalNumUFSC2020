@@ -8,8 +8,15 @@ Dk = [29.19624064472574, 21.81053777956228,  20.56803099349769,
 
 Dk_minusOne = [50, 29.19624064472574, 21.81053777956228,
                20.56803099349769, 20.531687584699874]
-plt.plot(x, Dk, label="Dk")
-plt.plot(x, Dk_minusOne, label="Dk-1")
+
+Error = []
+
+for n in range(len(x)):
+    Error.append(abs(Dk[n] - Dk_minusOne[n]))
+    print(Error)
+
+
+plt.plot(x, Error, label="Dk - Dk-1")
 
 
 plt.legend(loc='upper left')
@@ -18,3 +25,4 @@ plt.tight_layout()
 
 
 plt.show()
+
