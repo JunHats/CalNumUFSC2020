@@ -13,7 +13,7 @@ def secante(D0, D1, Erro, max_iter):
     while(k <= max_iter):
         Da2 = Da1
         Da1 = D
-        D = Da1 - f(Da1)*(Da2 - Da1)/(f(Da2) - f(Da1))
+        D = Da1 - f(Da1)*(Da1 - Da2)/(f(Da1) - f(Da2))
         print(f'{k}\t{D}\t{f(D)}')
         if(abs(D - Da1) <= Erro):
             return (D, k)
