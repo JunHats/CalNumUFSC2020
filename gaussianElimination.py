@@ -11,12 +11,12 @@ b = array([10.0, 0.0, 0.0, 0.0, 0.0, 0.0])
 n = len(b)
 x = zeros(n, float)
 
-# Elimination
+
 
 
 def gaussianElimination(a, x, b, n):
     for k in range(n-1):
-        if fabs(a[k, k]) < 1.0e-12:
+        if fabs(a[k, k]) == 0:
             for i in range(k+1, n):
                 if fabs(a[i, k]) > fabs(a[k, k]):
                     a[[k, i]] = a[[i, k]]
@@ -34,7 +34,7 @@ def gaussianElimination(a, x, b, n):
     print(a)
     print(b)
 
-    # Back Substitution
+   
     x[n-1] = b[n-1] / a[n-1, n-1]
 
     for i in range(n-2, -1, -1):
